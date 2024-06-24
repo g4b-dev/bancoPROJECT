@@ -1,0 +1,13 @@
+<h2>Lista de Eventos</h2>
+<a href="{% url 'evento_create' %}">Novo Evento</a>
+<ul>
+    {% for evento in eventos %}
+        <li>
+            <a href="{% url 'evento_update' evento.pk %}">{{ evento.titulo }}</a>
+            <form method="post" action="{% url 'evento_delete' evento.pk %}" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Deletar</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>

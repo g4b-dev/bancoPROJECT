@@ -1,0 +1,7 @@
+<h2>Deletar Evento</h2>
+<p>Tem certeza de que deseja deletar o evento "{{ evento.titulo }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Sim, deletar</button>
+</form>
+<a href="{% url 'evento_list' %}">Cancelar</a>
